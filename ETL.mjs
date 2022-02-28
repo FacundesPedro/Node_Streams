@@ -11,7 +11,7 @@ class WareHouse{
     constructor(filename = 'bigFile'){
         this.inputStream = new Readable({
             read:function () {
-                for(let id=0;id<1e4;id++){
+                for(let id=0;id<1e4;id++){ //Tamanho do Input !!!
                     const dataObj = {id:Date.now()+id,index:id}
                     this.push(JSON.stringify(dataObj)) //manda o json para a callstack do javascript
                 }
@@ -26,7 +26,7 @@ class WareHouse{
                 callB(null,toCsvData)
             }
         })
-        this.outputStream = createWriteStream(`${filename}.csv`)
+        this.outputStream = createWriteStream(`${filename}.csv`)//vai dar output no file para a maquina CUIDADO KKKK
     }
     
     inputStream = Readable
