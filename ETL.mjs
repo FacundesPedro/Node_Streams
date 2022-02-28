@@ -33,7 +33,7 @@ class WareHouse{
     transformStreamToCSV = Transform
     outputStream = Writable
 
-    runPipeline = async() => await _asyncPipeline(this.inputStream,
+    runPipeline = async() => _asyncPipeline(this.inputStream,
                                                 this.transformStreamToCSV,
                                                 this.outputStream)
 }
